@@ -1,0 +1,475 @@
+/*General CSS tags*/
+html{
+    scroll-behavior: smooth;/
+}
+
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+
+a { text-decoration: none; }
+
+a:hover{ text-decoration: none; }
+
+li { list-style: none; }
+
+/*Index Page Css*/
+p{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #606060;
+}
+
+.extra-div h2{
+    font-size: 0.9rem;
+    margin: 20px 0 15px 0;
+    font-weight: bold;
+    line-height: 1.1;
+    word-spacing: 4px;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3)),url(../img/beach.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+    position: relative;
+}
+
+.header:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    opacity: .3;
+    z-index: -1;
+    background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%) ;    
+}
+
+.navbar:before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    opacity: .3;
+    z-index: -1;
+    background:#1E5162;    
+}
+
+.nav-item a{
+    color: #fff !important;
+}
+
+.nav-item a:hover{
+    color: #50d1c0!important; 
+}
+
+.header-section{
+    width: 100%;
+    height: inherit;
+    color: antiquewhite;
+    text-align: center;
+    position: relative;
+}
+
+.center-div{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.header-buttons a{
+    border: 1px solid #fff;
+    border-radius: 100px;
+    margin: 0 5px;
+    padding: 12px 35px;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.header-buttons a:hover{
+    color: #50d1c0;
+    background: #fff;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);   
+}
+
+.center-div p{
+    font-size: 1.3rem;
+    padding: 10px 0 20px 0;
+    color: white;
+}
+
+/* hoverable divs css start*/
+
+.header-extradiv{
+    width: 100%; height: auto;
+    margin: 100px 0;
+    text-align: center;
+}
+
+.extra-div{
+    background: #fff;
+    border: medium none;
+    padding: 50px!important;
+    border-radius: 3px;
+    transition: 0.3s;
+    
+}
+
+.extra-div:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-20px);
+}
+
+i{
+    color: #5DA2DF;
+}
+
+/* hoverable divs css end*/ 
+
+/* guides and tips section starts*/ 
+.guides {
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    position: relative;
+}
+
+#guideheader{
+    padding-bottom: 25px;
+}
+
+.guides:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: -1;
+    background: linear-gradient(160deg, #90CCF4 55%, #5DA2DF 0%);
+}
+
+.card{
+    transition: 0.4s ease;
+}
+
+.card-header{
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: #fff!important;
+    padding: 30px!important;
+    color: #90CCF4;
+}
+
+.card-body{
+    padding: 0px!important;
+}
+
+.card-body li{
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #606060;
+}
+
+.card-footer{
+    background: white!important;
+    padding: 30px 0px!important;
+}
+
+.card-footer a{
+    border: 1px solid #606060;
+    border-radius: 100px;
+    margin: 0 5px;
+    padding: 12px 35px;
+    outline: none;
+    color: #5DA2DF;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.card:hover .card-footer a{
+    color:#fff;
+    background: #5DA2DF;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+.card:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);   
+}
+
+.card:hover .card-header, .card:hover {
+    color: #5DA2DF;  
+}
+
+.card-img-bottom{
+    height:270px;
+    width: auto;
+}
+/* guides and tips section ends/ 
+
+/* sample gallery starts*/ 
+.samplegallery{
+    width: 100%;
+    height: 100vh;
+    padding: 80px 0;
+    background-color: #90CCF4;
+}
+
+.box{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
+    border-radius: 2px;
+    transition: 0.3s ease;
+    background-color: #fff;
+
+}
+
+.box:hover{
+    background: #5DA2DF;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -60px!important;
+}
+
+.carousel-indicators li{
+    background-color: #16c9f6!important;
+}
+
+/* sample gallery ends*/ 
+
+/* footer starts*/ 
+.footersection{
+    width:100%;
+    height:auto;
+    padding: 70px 0 20px 0;
+    background: #5DA2DF;
+    position: relative;
+}
+
+.footersection p{
+    color: #fff;
+}
+
+.footersection li a{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.footersection h3{
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 1.2rem!important;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+#myBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    color: #fff;
+    background-color: #00abff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#myBtn:hover{
+    background: #606060;
+}
+
+/* footer ends*/ 
+
+/*media queries*/
+@media(max-width: 768px){
+    .nav-item{
+        text-align: center!important;
+    }
+    
+    .guides,.samplegallery{
+        height: auto;
+        margin-top: 50px;
+    }
+    
+    .card{
+        margin: 30px 0;
+    }
+    
+    #navdiv{
+        text-align: left!important;
+    }
+    
+    .cheatsheet{
+        width: 100%!important;
+    }
+    
+    .iframe{
+        width: 100%!important;
+    }
+    
+    #centerimg{
+        text-align: center!important;
+    }
+    
+    .cheatsheet{
+    padding-bottom: 0px!important;
+    width: 100%;
+    padding-top: 10px !important;
+}
+    .iframe{
+    padding-top: 10px!important;
+    height: 600px!important;
+}
+    
+    .h3{
+    padding-top: 10px;
+}
+}
+
+/*Categories page css*/
+
+.header-categories{
+    width: 100%;
+    height: 10vh;
+    position: relative;
+    padding-bottom: 69px;
+    background-color: #90CCF4;
+}
+
+.table{
+    padding: 50px!important;
+    width: 100%!important;
+}
+
+.table-image, td, th{
+    vertical-align: middle;
+}
+
+.container2{
+    background-color: #90CCF4; 
+}
+
+.cell{
+    background-color: #5DA2DF;
+}
+
+/*Exposure page css*/
+.header-exposure{
+    width: 100%;
+    height: 9.5vh;
+    position: relative;
+    background: #90CCF4; 
+}
+
+.cheatsheet{
+    padding-bottom: 50px;
+    width: 70%;
+    padding-top: 30px;
+    -webkit-width: 70%!important;
+}
+
+.header-extradiv2{
+    background: #90CCF4; 
+    padding-bottom: 60px;
+    padding-top: 20px;
+    background: linear-gradient(180deg, #90CCF4 55%, #5DA2DF 0%);
+}
+
+.extra-div2{
+    background: #90CCF4;
+    border: medium none;
+    padding: 50px!important;
+    border-radius: 3px;
+    transition: 0.3s;   
+    box-shadow: 0 0 50px 0 rgba(0,168,255,0.3);
+    background: linear-gradient(180deg, #5DA2DF 55%,#90CCF4 0%);
+}
+
+.extra-div2:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+.exposureheader{
+    color: #fff;
+    font-size: 400;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.iframe{
+    padding-top: 30px;
+}
+
+#img{
+    height: 350px;
+}
+
+.aperturetext{
+    color: #606060;
+}
+
+/*Tips page css*/
+.header-tips{
+    width: 100%;
+    height: 9.5vh;
+    position: relative;
+    background: #90CCF4;
+}
+
+.tipsh1{
+    text-align: center;
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+.jumbotron{
+    background-image: linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3)), url(../img/headerbg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 0px!important;
+}
+
+.h3{
+    font-weight: bold!important;
+}
+
+
+
+
+
+
+
+
+
+

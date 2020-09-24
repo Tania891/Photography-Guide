@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<title>Learn to do Photography</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    
+<!--Navigation Bar Starts-->  
+<div class="header-exposure" id="topheader">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container text-uppercase p-2">
+<a class="navbar-brand font-weight-bold text-white" href="index.html">Photo Guide</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto text-uppercase">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="exposureguide.html">Exposure Guide <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="technicaltips.html">Technical Tips</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="categories.html">Categories</a>
+      </li>
+    </ul>
+
+</div>
+</div>    
+</nav>
+</div> 
+<!--Navigation Bar Ends-->
+<!--Subheader Starts-->   
+<div class="jumbotron">
+  <h2 class="tipsh1">EXPOSURE GUIDE</h2> 
+  <p></p> 
+</div>
+ <!--Subheader Ends-->   
+   
+<!--Exposure Guide Boxes Start-->
+<section class="header-extradiv2">
+    <div class="container">
+        <div class="row">
+           <div class="extra-div2 col-lg-4 col-md-4 col-12">
+               <h2 class="exposureheader">Aperture</h2>
+               <img src="img/meerkat2.png" class="img-fluid" id="centerimg">
+               <p> Aperture can be defined as the opening in a lens through which light passes to enter the camera. It is expressed in f-numbers like f/1.4, f/2, f/2.8 to express the size of the lens opening, which can be controlled through the camera.</p>
+        </div>    
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+                <h2 class="exposureheader">Shutter Speed</h2>
+               <img src="img/flowingwater.jpg" class="img-fluid" id="centerimg">
+               <p> Shutter speed is the length of time camera shutter is open, exposing light onto the camera sensor. A fast shutter speed means objects would be frozen while a slow shutter speed shows more movement.</p>
+        </div>    
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+               <h2 class="exposureheader">ISO</h2>
+               <img src="img/passage.jpg" class="img-fluid" id="centerimg">
+               <p> ISO in a camera option that will either brighten or darken your photography. Increasing the ISO number will make your pictures brighter and help you capture good shots in darker environments.</p>
+        </div>     
+    </div>
+    </div>
+</section>
+<!--Exposure Guide Boxes End--> 
+<div class="jumbotron">
+<h2 class="tipsh1">LIVE EXPOSURE TOOL</h2> 
+</div>
+<!--Live Exposure Tool starts-->   
+<div class="container">
+<div class="row">
+<img class="cheatsheet" src="img/cheatsheet.png" class="img-fluid">
+<iframe class="iframe" src="https://dima.fi/exposure/?embed" align="left" width="320" height="510" frameBorder="0"></iframe></div></div>
+<!--Live Exposure Tool Ends--> 
+    
+<!--Before and After Sliders--> 
+<section class="header-extradiv2">
+    <div class="container">
+        <div class="row">
+           <div class="extra-div2 col-lg-4 col-md-4 col-12">
+               <h2 class="exposureheader">Shutter Speed</h2>
+               <div class="img-comp-container">
+               <div class="img-comp-img">
+               <img src="img/fastshutter.png" width="300" height="200">
+             </div>
+                <div class="img-comp-img img-comp-overlay">
+                <img src="img/slowshutter.png" width="300" height="200">
+             </div>
+            </div>
+        <p> Slide the image to see the difference between a slow and a fast shutter speed</p>
+        </div> 
+<!--Javascript for overlaying starts--> 
+<!--I had to use script and style tags in here as that was the preferred way as seen on W3school's website--> 
+<!--The code below is taken from an outside source (w3schools) as it was very complicated and impossible for me to code myself--> 
+
+<script>
+function initComparisons() {
+  var x, i;
+  /*find all elements with an "overlay" class:*/
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /*once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function:*/
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /*get the width and height of the img element*/
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /*set the width of the img element to 50%:*/
+    img.style.width = (w / 2) + "px";
+    /*create slider:*/
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /*insert slider*/
+    img.parentElement.insertBefore(slider, img);
+    /*position the slider in the middle:*/
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /*execute a function when the mouse button is pressed:*/
+    slider.addEventListener("mousedown", slideReady);
+    /*and another function when the mouse button is released:*/
+    window.addEventListener("mouseup", slideFinish);
+    /*or touched (for touch screens:*/
+    slider.addEventListener("touchstart", slideReady);
+    /*and released (for touch screens:*/
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /*prevent any other actions that may occur when moving over the image:*/
+      e.preventDefault();
+      /*the slider is now clicked and ready to move:*/
+      clicked = 1;
+      /*execute a function when the slider is moved:*/
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /*the slider is no longer clicked:*/
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /*if the slider is no longer clicked, exit this function:*/
+      if (clicked == 0) return false;
+      /*get the cursor's x position:*/
+      pos = getCursorPos(e)
+      /*prevent the slider from being positioned outside the image:*/
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /*execute a function that will resize the overlay image according to the cursor:*/
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = e || window.event;
+      /*get the x positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x coordinate, relative to the image:*/
+      x = e.pageX - a.left;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /*resize the image:*/
+      img.style.width = x + "px";
+      /*position the slider:*/
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+</script>
+<style>
+.img-comp-container {
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow:hidden;
+}
+
+.img-comp-img img {
+  display:block;
+  vertical-align:middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index:9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196F3;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+</style>
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+               <h2 class="exposureheader">Aperture</h2>
+                 <div class="img-comp-container">
+                 <div class="img-comp-img">
+                 <img src="img/shallowdepth.JPG" width="300" height="200">
+               </div>
+             <div class="img-comp-img img-comp-overlay">
+              <img src="img/deepdepth.JPG" width="300" height="200">
+         </div>
+    </div>     <p> Slide the image to see the difference between a deep vs a shallow depth of field</p>
+        </div>   
+<script>
+function initComparisons() {
+  var x, i;
+  /*find all elements with an "overlay" class:*/
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /*once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function:*/
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /*get the width and height of the img element*/
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /*set the width of the img element to 50%:*/
+    img.style.width = (w / 2) + "px";
+    /*create slider:*/
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /*insert slider*/
+    img.parentElement.insertBefore(slider, img);
+    /*position the slider in the middle:*/
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /*execute a function when the mouse button is pressed:*/
+    slider.addEventListener("mousedown", slideReady);
+    /*and another function when the mouse button is released:*/
+    window.addEventListener("mouseup", slideFinish);
+    /*or touched (for touch screens:*/
+    slider.addEventListener("touchstart", slideReady);
+    /*and released (for touch screens:*/
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /*prevent any other actions that may occur when moving over the image:*/
+      e.preventDefault();
+      /*the slider is now clicked and ready to move:*/
+      clicked = 1;
+      /*execute a function when the slider is moved:*/
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /*the slider is no longer clicked:*/
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /*if the slider is no longer clicked, exit this function:*/
+      if (clicked == 0) return false;
+      /*get the cursor's x position:*/
+      pos = getCursorPos(e)
+      /*prevent the slider from being positioned outside the image:*/
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /*execute a function that will resize the overlay image according to the cursor:*/
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = e || window.event;
+      /*get the x positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x coordinate, relative to the image:*/
+      x = e.pageX - a.left;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /*resize the image:*/
+      img.style.width = x + "px";
+      /*position the slider:*/
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+</script>
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+               <h2 class="exposureheader">ISO</h2>
+                 <div class="img-comp-container">
+                   <div class="img-comp-img">
+                   <img src="img/highiso.png" width="300" height="200">
+               </div>
+             <div class="img-comp-img img-comp-overlay">
+             <img src="img/lowiso.png" width="300" height="200">
+        </div>
+         </div>
+               <p> Slide the image to see the difference between a high ISO versus a low value ISO</p>
+        </div> 
+<script>
+function initComparisons() {
+  var x, i;
+  /*find all elements with an "overlay" class:*/
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    /*once for each "overlay" element:
+    pass the "overlay" element as a parameter when executing the compareImages function:*/
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, img, clicked = 0, w, h;
+    /*get the width and height of the img element*/
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    /*set the width of the img element to 50%:*/
+    img.style.width = (w / 2) + "px";
+    /*create slider:*/
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-comp-slider");
+    /*insert slider*/
+    img.parentElement.insertBefore(slider, img);
+    /*position the slider in the middle:*/
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    /*execute a function when the mouse button is pressed:*/
+    slider.addEventListener("mousedown", slideReady);
+    /*and another function when the mouse button is released:*/
+    window.addEventListener("mouseup", slideFinish);
+    /*or touched (for touch screens:*/
+    slider.addEventListener("touchstart", slideReady);
+    /*and released (for touch screens:*/
+    window.addEventListener("touchend", slideFinish);
+    function slideReady(e) {
+      /*prevent any other actions that may occur when moving over the image:*/
+      e.preventDefault();
+      /*the slider is now clicked and ready to move:*/
+      clicked = 1;
+      /*execute a function when the slider is moved:*/
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      /*the slider is no longer clicked:*/
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      /*if the slider is no longer clicked, exit this function:*/
+      if (clicked == 0) return false;
+      /*get the cursor's x position:*/
+      pos = getCursorPos(e)
+      /*prevent the slider from being positioned outside the image:*/
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      /*execute a function that will resize the overlay image according to the cursor:*/
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = e || window.event;
+      /*get the x positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x coordinate, relative to the image:*/
+      x = e.pageX - a.left;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      /*resize the image:*/
+      img.style.width = x + "px";
+      /*position the slider:*/
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+    }
+  }
+}
+</script>
+
+<script>
+/*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+initComparisons();
+              
+</script>
+    </div>
+    </div>
+</section>
+
+<!--Overlaying and Live exposure tool ends-->
+<div class="jumbotron">
+<h2 class="tipsh1">APERTURE NUMBERS</h2> 
+</div>
+<!--Illustrations for aperture starts-->
+    
+<section class="header-extradiv2">
+    <div class="container">
+        <div class="row">
+           <div class="extra-div2 col-lg-4 col-md-4 col-12">
+               <h2 class="exposureheader">F/1.4</h2>
+               <img src="img/drawing11.png" class="img-fluid" id="centerimg"><br>
+               <p class="aperturetext"> F/1.4 is the smallest possible number of aperture but is actually the biggest in terms of how wide your lens will open. Taking photos of something like tiny stars would be the best example for this as you will need a lot of light and time for the camera to sense all the stars and get a good photo. </p>
+        </div>    
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+                <h2 class="exposureheader">F/2</h2>
+               <img src="img/drawing22.png" class="img-fluid" id="centerimg"><br>
+               <p class="aperturetext"> F/2 lets half as much light in as compared to f/1.4. You will use this to create a very thin depth of field meaning that it could be great for taking portrait photos of a single person and it will blur the background out and put the subject into focus. </p>
+        </div>   
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+               <h2 class="exposureheader">F/4</h2>
+               <img src="img/drawing33.png"class="img-fluid" id="centerimg"><br>
+               <p class="aperturetext"> F/4 is a moderate aperture with a moderate depth of field too. It can be used when you have a bit more objects in foreground like the bird and a tree in this example. This will still work like f/2 but as there are more objects in the front you will need a bigger number to get all the things in focus.</p>
+        </div>     
+    </div>
+    </div>
+</section><section class="header-extradiv2">
+    <div class="container">
+        <div class="row">
+           <div class="extra-div2 col-lg-4 col-md-4 col-12">
+               <h2 class="exposureheader">F/8</h2>
+               <img src="img/drawing44.png" class="img-fluid" id="centerimg"><br><br>
+               <p class="aperturetext"> F/8 is a moderate number with a moderately large depth of field meaning that it is a good option for landscape photography such as mountains and cityscapes. You will have most things in focus too and still capture all the details that you want.</p>
+        </div>    
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+                <h2 class="exposureheader">F/11</h2>
+               <img src="img/drawing55.png" class="img-fluid" id="centerimg"><br><br>
+               <p class="aperturetext"> F/11 is another good option to capture extra details like patterns in architecture or focusing on an object that is far away and still managing to capture it. This will also give a moderately large depth of field and some blur but most most foreground objects will be visible.</p>
+        </div>    
+            
+            <div class="extra-div2 col-lg-4 col-md-4 col-12">               
+               <h2 class="exposureheader">F/16</h2>
+               <img src="img/drawing66.png" class="img-fluid" id="centerimg"><br><br>
+               <p class="aperturetext"> F/16 is a small aperture but provides the most depth of field out of all of these options.If you use a very small aperture like f/16 would mean that you can actually capture both background and foreground objects in perfect focus without worrying about blurring.</p>
+        </div>     
+    </div>
+    </div>
+</section>
+<!--Illustration section finishes-->
+
+    
+    
+<!--Putting other script tags at the end to minimise loading time for website-->  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+</body>
+</html>
